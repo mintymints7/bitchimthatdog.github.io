@@ -1,0 +1,983 @@
+  /*
+  _____ _____ _____  ______ _____ _______ ____  _______     __
+ |  __ \_   _|  __ \|  ____/ ____|__   __/ __ \|  __ \ \   / /
+ | |  | || | | |__) | |__ | |       | | | |  | | |__) \ \_/ / 
+ | |  | || | |  _  /|  __|| |       | | | |  | |  _  / \   /  
+ | |__| || |_| | \ \| |___| |____   | | | |__| | | \ \  | |   
+ |_____/_____|_|  \_\______\_____|  |_|  \____/|_|  \_\ |_|   
+ 
+ TABLE OF CONTENTS
+   [00] DIRECTORY
+   [01] UNIVERSAL LAWS - RULES FOR AN ASSET ACROSS THE SITE
+   [02] "USEFUL" TOOLS - GENERAL WEBSITE BUILDING BLOCKS (section, mainlogo, divider, webrectangles)
+   [03] HEADER AND FOOTER
+   [04] TITLE SECTIONS" - BITE-SIZED GISTS OF THE MAIN PAGES
+   [05] "UNIVERSAL" COLLECTIONS - SMART GALLERIES!
+   [06] MUSIC - ASSETS FOR THE MUSIC SECTION OF THE WEBSITE
+   [07] ART - ASSETS FOR THE ART SECTION OF THE WEBSITE
+   [08] CUSTOM MARKDOWN TOOLS - LIST OF VALUES FOR BLOG/ABOUT SHENANIGANS
+ 
+ MOBILE COMPATIBILTITY NAVIGATION (ctrl + F)
+  - SMALL ( 0px - 600px )
+  - MEDIUM ( 600px - 810px )
+  - LARGE ( 810px - 1200px )
+ */
+
+  /* - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - [01] UNIVERSAL LAWS - RULES FOR AN ASSET ACROSS THE SITE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+    /* html ~ rules for the WHOLE PAGE */
+      html {
+        /* background image for the page */
+        background-image:url(imageassets/websitebg5.jpg);
+        /* generally, text should be centered, and in Nunito font. */
+        text-align: center;     color: #bfdfde;     font-family: Nunito_Bold;     src:url(Nunito_Bold.ttf)
+      }
+      
+    /* rules for Nunito generally */  
+      @font-face {                  
+        font-family: 'Nunito';
+        src: url(Nunito-Bold.ttf);
+      }
+    
+    /* viewport! this is what lets the website scale to the window size */
+      @viewport { width: device-width;      zoom: 1.0; } 
+      @-ms-viewport { width: device-width; } 
+    
+    /* body ~ rules for most of the page, everything elements are on at least */
+      body {
+        font-family: 'Nunito';
+        /* the custom cursor! */
+        cursor: url("https://mentholgrrl.neocities.org/imageassets/grrl_cursor_v2.png"), pointer;
+        cursor: url("https://mentholgrrl.neocities.org/imageassets/grrl_cursor_v2.png"), default;
+        margin-left: 0px;
+        margin: auto;
+      }
+    
+    /* all images should have auto margins */
+      img { 
+        margin: auto; 
+        object-fit: contain;
+      }
+    
+    /* color settings for various phases of links. self explanatory */
+      a:link { color: #a68fbf; }
+      a:visited { color: #846c9e; }
+      a:hover { color: #b09bc7; }
+      a { text-decoration: none; text-align: center;}
+    
+    /* iframes should not have any bottom spacing, and also no borders */
+      iframe { margin-bottom: 0px; padding-bottom: 0px; border: 0px; }
+      
+    /* SMALL */ @media only screen and (max-width:600px) {
+      h2 { font-size: 130%; }
+    }
+      
+  /* - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - [02] "USEFUL" TOOLS - GENERAL WEBSITE BUILDING BLOCKS - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - */
+  
+    /* yoink - makes item functionally non viewable */
+      .yoink { position: fixed; top: 200vh; color: rgba(253,38,38,0.0); user-select: none; }
+      
+    /* poof1 - makes item disappear when screen isn't wide enough*/
+      /* LARGE */ @media screen and (max-width:1200px) {
+        .poof1 { display: none; }
+      }
+  
+    /* main logo ~ really should be a class, but breaks for some reason. it determines the size and behaviour of the big top title of a page */
+      #mainlogo {
+        width: 100%;
+        border: 0px solid #999;
+        margin: auto; margin-top: 7%; margin-bottom: 2.5%;
+      }
+      
+      /* LARGE */ @media screen and (min-width:810px) and (max-width:1200px) {
+        #mainlogo { margin-top: 10%; margin-bottom: 1%; }
+      }
+      
+      /* MEDIUM */ @media screen and (max-width:810px) {
+        #mainlogo { margin-top: 4%; margin-bottom: 1%; }
+      }
+    
+    /* more rules for the big top image */
+      #mainlogoimage {
+        width: 50%;
+        border: 0px solid #999;
+        margin: auto; margin-top: 10px;
+      }
+      
+      /* LARGE */ @media screen and (min-width:810px) and (max-width:1200px) {
+        #mainlogoimage {
+          width: 70%;
+          border: 0px solid #999;
+          margin: auto; margin-top: 10px;
+        }
+      }
+      
+      /* MEDIUM */ @media screen and (min-width:600px) and (max-width:810px) {
+        #mainlogoimage {
+          width: 70%;
+          border: 0px solid #999;
+          margin: auto; margin-top: 10px;
+        }
+      }
+      
+      /* SMALL */ @media only screen and (max-width:600px) {
+        #mainlogoimage {
+          width: 90%;
+          border: 0px solid #999;
+          margin: auto; margin-top: 10px;
+        }
+      }
+    
+    /* section - the basic container which all website elements are contained */
+     
+      #promosection {
+        background-color: #371f52;
+        width: 1100px;
+        border: purple 0px solid; border-radius: 10px;
+        margin: auto; margin-top: 10px; margin-bottom: 10px;
+        padding: 10px; padding-top: 30px; padding-bottom: 20px;
+        display: flex;
+      }
+      
+      #promoimage {
+        border: 0px solid #999;
+        margin: 0px;
+        width: 25%;
+      }
+      
+      #promoimage img { width: 100%; }
+      #promoimage p { margin: 0px; }
+      
+      #promoiframe {
+        border: 0px solid #999;
+        margin: 0px;
+        width: 75%;
+      }
+      
+      #section {
+        background-color: #371f52;
+        width: 1100px;
+        border: purple 0px solid; border-radius: 20px;
+        margin: auto; margin-top: 10px; margin-bottom: 10px;
+        padding: 10px; padding-top: 30px; padding-bottom: 20px;
+      }
+      
+      /* LARGE */ @media screen and (min-width:810px) and (max-width:1200px) {
+        #section { width: 80%; }
+      }
+      
+      /* MEDIUM */ @media screen and (min-width:600px) and (max-width:810px) {
+        #section { width: 80%; padding-top: 3%;}
+        
+      }
+      
+      /* SMALL */ @media only screen and (max-width:600px) {
+        #section { width: 90%; padding-top: 5%;}
+      }
+      
+    /* flexisection - a section but im playing with flexbox :3 parent box yeah */
+      #flexisection {
+        border: purple 0px solid; border-radius: 10px;
+        padding-left: 12px; padding-right: 12px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      
+    /* flip-up - a class attribute that makes the flexbox go from row to column */
+    
+      /* CUSTOM */ @media screen and (max-width:910px) {
+        .flipup { flex-direction: column-reverse }
+      }
+      
+    /* flexichild - flexbox :3 child element yeah */
+      #flexichild {
+        background-color: #493163;
+        flex: 1;
+        margin: 12px; 
+        padding: 12px;
+        border: purple 0px solid; border-radius: 10px;
+        text-align: start;
+      }
+      
+      #flexichild > h2 {
+        text-align: center;
+        font-size: 40px;
+        padding: 0px;
+        margin: 0px;
+        text-decoration: underline;
+      }
+      
+      #flexichild > img {
+        width: 100%;
+        object-fit: cover;
+      }
+    
+    /* divider - funny lil line to make things a little cleaner */
+      #divider {
+        background-color: #846c9e;
+        height: 2px; width: 95%;
+        border-radius: 1px;
+        margin: auto; margin-bottom: 20px;
+      }
+      
+      #inner-divider {
+        background-color: #846c9e;
+        height: 2px; width: 100%;
+        border-radius: 1px;
+        margin: auto; margin-bottom: 20px;
+      }
+      
+    /* floater - z-index element that lets things hang out on top of other things */
+      .floater {
+        position: relative; 
+        margin: auto;
+        z-index: 1;
+      }
+      
+    /* webrectangles - buttons to fun places all over the web! for friends and inspirations */
+        #webrectangles {
+          width: 100%;
+          margin: auto;
+    	    padding: 0;
+        	display: flex;      flex-wrap: wrap;
+    	    list-style: none;     justify-content: center;
+        }
+        #webrectangles li { padding: 5px; padding-bottom: 0px; }
+        #webrectangles img { padding: 0; border: solid #846c9e 2px; }
+        
+    /* responsive iframe - keep my aspect ratio brah */
+      #responsive-iframe {
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    
+  /* - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - [03] HEADER AND FOOTER (HEADER AND FOOTER) - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - */
+    
+    /* - - - - header - the main navigation for the website (apart from the footer, which only appears at a certain width - - - - */
+    
+      header {
+        background-color: black;
+      	height: 74px; width: 100%; z-index: 100;
+      	margin-bottom: 0px;
+        padding-bottom: 0px;
+      	position: fixed;      top: 0;
+      }
+      
+      /* toolbar top - technical behaviour on button spacing. might be able to move it to the header html itself? */
+        #toolbar_top {
+          padding-right: 10px;
+        }
+    
+      /* leftheader - spacing regarding the little logo at the top of the header */
+        #leftheader {
+          border: 0px solid #999;
+          margin-top: 12px; margin-left: 15px; margin-right: 0px;
+          padding: 3px 3px;
+          float: left;
+        }
+      
+      /* header buttons - class for rules of the "mainheader" iframe asset */
+        .header-buttons {
+          padding: 0px;
+          display: flex;      flex-wrap: wrap;      list-style: none;
+          text-align: center;     justify-content: center;      align-items: center;
+        }
+      
+      /* rules for the buttons themselves. decides the border around them, font size, etc */
+        .header-buttons > li {
+          font-size: 25px;
+          border: #bfdfde 2px solid; border-radius: 3px;
+          padding: 2px; padding-left: 10px; padding-right: 10px;
+          margin-left: 10px; margin-right: 10px;
+          a:link { color: #bfdfde; }
+          a:visited { color: #bfdfde; }
+          a:hover { color: #bfdfde; }
+        }
+        
+      /* rules for the header being in a certain range */
+        @media screen and (max-width:810px) {
+          /* make the footer invisible when it isn't needed */
+          header { display: none; }
+        }
+  
+    /* - - - - - - - - footer - the main navigation for the website at thinner sizes - - - - - - - - */
+    
+      footer { 
+        height: 81px; 
+        background-color: black;
+        width: 100%; z-index: 100;
+        position: fixed; bottom: 0;
+      }
+            
+      footer > a {
+        color: white; text-decoration: none;
+        padding-left: 100px; padding-right: 100px;
+      }
+      
+      /* footerspace, i think this was a frustrated fix for a weird glitch happening with the footer floating off the page */
+        #footerspace { margin: 0px; }
+        
+      /* make the footer invisible when it isn't needed */
+        @media screen and (min-width:810px) {
+          footer { display: none; }
+        }
+        
+      /* changing the footer's alignment behaviour for certain screensizes */
+        /* MEDIUM */ @media screen and (min-width:600px) and (max-width:810px) {
+          #footerspace { margin: 100px; }
+          /* despite being called headerbuttons, this sets rules for both the header and the footer. */
+          .header-buttons > li {
+            width: 5%;
+            font-size: 90%;
+            border: #846c9e 0px solid; border-radius: 3px;
+            margin-left: 15px; margin-right: 15px;
+            padding: 2px; padding-left: 10px; padding-right: 10px;
+          }
+        }
+        
+        /* SMALL */ @media only screen and (max-width:600px) {
+          #footerspace { margin: 95px; }
+          /* despite being called headerbuttons, this sets rules for both the header and the footer. */
+          .header-buttons > li {
+            width: 10%;
+            font-size: 90%;
+            border: #846c9e 0px solid; border-radius: 3px;
+            padding: 2px;
+            text-align: center;     justify-content: center;
+          }
+        }
+  
+  /* - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - [04] "TITLE SECTIONS" - BITE-SIZED GISTS OF THE MAIN PAGES - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - */
+  
+    /* flex container - currently only dictates rules for the "title" parts of each section. fix these later */
+      .flex-container {
+        border: white 0px solid;
+        margin: auto; margin-top: 10px;
+        display: flex;
+        align-items: center;
+      }
+      
+      /* MEDIUM, SMALL */ @media only screen and (max-width:810px) {
+        .flex-container {
+          border: white 0px solid;
+          margin: auto; margin-top: 10px; margin-bottom: 10px;
+          display: grid; align-items: center;
+        }
+      }
+      
+      
+      
+    /* left title - current solution for the fancy image titles on each section */
+      .lefttitle { border: 0px solid #999; margin-left: 20px; padding: 5px; }
+      
+      /* f */ @media only screen and (max-width:600px) {
+        .lefttitle { margin-left: 0px; }
+      }  
+    
+    /* blurbs ~ behaviour of the "captions" for the title sections on the site */
+      #artblurb { border: 0px solid #999; margin: auto; padding: 5px; }
+      #musicblurb { border: 0px solid #999; margin: auto; padding: 5px; }
+      #contactblurb { border: 0px solid #999; margin: auto; margin-top: 0px; margin-bottom: 0px; padding: 5px; }
+  
+  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - [05] "UNIVERSAL" COLLECTIONS - SMART GALLERIES! - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  
+    /* maincollection - container for all smart galleries. the art grid, the music grids, the preview displays */
+    .maincollection {
+      margin-bottom: 0px; 
+      padding: 0;
+      display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(4, 1fr);
+	    list-style: none;     word-wrap: normal;
+    }
+    
+    .maincollection > li { font-size: 125%; margin-top: 4%; }
+    
+    /* LARGE */ @media screen and (max-width:1200px) {
+      .maincollection {
+        display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 0px;
+  	    padding: 0;
+  	    list-style: none;     word-wrap: normal;
+      }
+      .maincollection > li { font-size: 2.4vw; margin-top: 4%; }
+    }
+    
+    /* MEDIUM */ @media screen and (max-width:810px) {
+      .maincollection {
+        display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 0px;
+  	    padding: 0;
+  	    list-style: none;     word-wrap: normal;
+      }
+      .maincollection > li { font-size: 3.3vw; margin-top: 4%; }
+    }
+    
+    /* SMALL */ @media screen and (max-width:600px) {
+      .maincollection {
+        display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 0px; margin-top: 0px;
+  	    padding: 0;
+  	    list-style: none;     word-wrap: normal;
+      }
+      .maincollection > li { font-size: 7vw; margin-top: 4%; }
+    }
+    
+    /* collectionimage - each specific featured picture on a collection. cover arts, artworks */
+    .collectionimage {
+      width: 85%;
+      border: #493163 10px solid; border-radius: 20px;
+      margin-bottom: 5px;
+      transition: transform .1s;
+    }
+    
+    /* SMALL */ @media only screen and (max-width:600px) {
+      .collectionimage {
+        width: 85%;
+        border: #493163 15px solid; border-radius: 20px;
+        margin-bottom: 5px;
+      }
+    }
+    
+    /* makes the images pop! up when hovered */
+    .collectionimage:hover {
+      -ms-transform: scale(1.05); /* IE 9 */
+        -webkit-transform: scale(1.05); /* Safari 3-8 */
+        transform: scale(1.05);
+        transition: transform 0.15s;
+    }
+    
+    .collectioninfo {
+      font-size: 0.9rem;
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+      padding-top: 0.25rem;
+    }
+    
+
+    
+    /* - - - - links collection - rules for the social media icons on the main page specifically - - - - */
+    
+      .linkscollection {
+  	    width: 90%;
+  	    margin: auto; margin-top: 10px; margin-bottom: 0px;
+  	    padding: 0;
+        display: flex;      flex-wrap: wrap;      grid-template-columns: 1fr;     grid-template-columns: repeat(7, 1fr);
+  	    list-style: none;     word-wrap: normal;    justify-content: space-between;
+      }
+      
+      .linkscollection > li { 
+        width: 17%; margin-bottom: 1%; 
+        -ms-transform: scale(1.00); /* IE 9 */
+        -webkit-transform: scale(1.00); /* Safari 3-8 */
+        transform: scale(1.00);
+        transition: transform 0.2s;
+      }
+      
+        /* SMALL */ @media only screen and (max-width:600px) {
+          .linkscollection > li { width: 27%; }
+        }
+        
+      .linkscollection > li:hover {
+        -ms-transform: scale(1.20) rotate(-0.01turn); /* IE 9 */
+        -webkit-transform: scale(1.20) rotate(-0.01turn); /* Safari 3-8 */
+        transform: scale(1.20) rotate(-0.01turn);
+        transition: transform 0.2s;
+      }
+      
+      .linksimage { width: 100%; margin-bottom: 5px; }
+    
+  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - [06] MUSIC - ASSETS FOR THE MUSIC SECTION OF THE WEBSITE - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+    /* music nav - directory of the music section */
+      #music-nav {
+        width: 90%;
+        margin: auto; margin-bottom: -1%; margin-top: -1%;
+        padding: 5px; 
+        display: grid;      grid-template: 40px / auto auto auto auto auto;      grid-gap: 15px;
+      }
+      
+      #music-nav > a {
+        font-size: 25px;
+        border: #846c9e 2px solid; border-radius: 5px;
+        margin-top: -5px; margin-bottom: 5px;
+        padding: 2px;
+        text-align: center;
+      }
+      
+      /* LARGE */
+      @media screen and (max-width:1200px) {
+        #music-nav {
+          width: 90%;
+          margin: auto; margin-bottom: -1%; margin-top: -1%;
+          padding: 5px; 
+          display: grid;      grid-template: auto / auto auto auto auto auto;      grid-gap: 15px;
+        }
+      }
+      
+      /* MEDIUM */
+      @media screen and (max-width:810px) {
+        #music-nav { grid-template: auto auto auto / auto auto auto auto; grid-gap: 15px; }
+        
+        #music-nav > a { font-size: 4vw; }
+      }
+      
+      /* SMALL */
+      @media screen and (max-width:600px) {
+        #music-nav > a { font-size: 6vw; }
+      }
+      
+      /* GRID SPECIFIERS */
+      @media screen and (max-width:810px) {
+        #nav-projects { grid-column: 1 / 3; grid-row: 1 / 2; }
+        #nav-songs { grid-column: 3 / 5; grid-row: 1 / 2; }
+        #nav-sets { grid-column: 1 / 3; grid-row: 2 / 3; }
+        #nav-playlists { grid-column: 3 / 5; grid-row: 2 / 3; }
+        #nav-collabs { grid-column: 2 / 4; grid-row: 3 / 4; }
+      }
+
+    /* - - - - featured ~ framework for a "featured" section, the albums, the playlists, the catalogs - - - - */
+
+      #featuredcontainer {
+        background-color: #493163;
+        border: 0px solid #999; border-radius: 10px;
+        margin: 2%;
+        padding: 20px; 
+        position: relative; justify-content: center; align-items: center;
+      }
+    
+      #featuredsection { 
+        display: flex;
+        flex-direction: row;
+      }
+      
+      /* MEDIUM */ @media only screen and (max-width:810px) {
+        #featuredsection {
+          margin-top: 10px; margin-bottom: 10px;
+          display: grid; align-items: center;
+        }
+      }
+    
+        /* image ~ SPECIFICALLY made for albums/playlist cover */
+          #featuredimage {
+            border: 0px solid #999;
+            margin: 0px;
+            padding-right: 2%;
+            width: 25%;
+          }
+      
+          #featuredimage img { width: 100%; }
+          #featuredimage p { margin: 0px; }
+          
+          /* LARGE */ @media only screen and (max-width:1200px) {
+            #featuredimage {
+              border: 0px solid #999;
+              margin: 0px;
+              padding-right: 2%;
+              width: 33%;
+            }
+        
+            #featuredimage img { width: 100%; }
+            #featuredimage p { margin: 0px; }
+          }
+          
+          /* MEDIUM */ @media only screen and (max-width:810px) {
+            #featuredimage {
+              border: 0px solid #999;
+              margin: 0px;
+              padding-right: 0%;
+              width: 100%;
+            }
+        
+            #featuredimage img { width: 100%; border-radius: 3%}
+            #featuredimage p { margin: 0px; }
+          }
+        
+        /* text ~ SPECIFICALLY made for albums/playlist title and bio */
+          #featuredtext {
+            width: 75%;
+            height: 100%;
+            margin: 0px;
+            text-align: left;
+          }
+      
+          #featuredtext > h2 { font-size: 3rem; margin-top: 0px; margin-bottom: -3%;}
+          #featuredtext p { margin: 0px; }
+          
+          /* LARGE */ @media only screen and (max-width:1200px) {
+            #featuredtext { 
+              width: 100%;
+              height: 100%;
+              margin: 0px;
+              text-align: left;
+              font-size: 1.7vw;
+            }
+            #featuredtext > h2 { font-size: 3.8vw; margin-top: 0px; margin-bottom: -4%; }
+            #featuredtext p { margin: 0px; }
+          }
+          
+          /* MEDIUM */ @media only screen and (max-width:810px) {
+            #featuredtext { 
+              width: 100%;
+              height: 100%;
+              margin: 0px;
+              text-align: center;
+              font-size: 4vw;
+            }
+            #featuredtext > h2 { font-size: 10vw; margin-top: 2%; margin-bottom: -4%; line-height: 1;}
+            #featuredtext p { margin: 0px; }
+          }
+        
+        /* link buttons ~ SPECIFICALLY made for albums/playlist plat links */
+          #linkbuttoncontainer {
+            display: flex;
+            margin: auto;
+            height: 100px;
+            margin-bottom: -10px;
+          }
+    
+          #linkbuttoncontainer > div {
+            border: #bfdfde 3px solid; 
+            border-radius: 100px; 
+            scale: 45%;
+            margin: auto;
+            margin-bottom: 0px;
+          }
+      
+          #okaysure {
+            margin-bottom:-5px;
+          }
+        
+        /* specific fix for spacing regarding the rim aorund the buttons */
+          #okaysure { margin-bottom: -5px; }
+          
+          .contact-front {
+            height: 110px;
+          }
+
+  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - [07] ART - ASSETS FOR THE ART SECTION OF THE WEBSITE - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  
+    /* maincollection - container for all smart galleries. the art grid, the music grids, the preview displays */
+    
+    .artcollection {
+      margin-bottom: 0;
+      padding: 0;
+      display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(3, 1fr);
+  	  list-style: none;     word-wrap: normal;
+  	  align-items: center;
+    }
+      
+    .artcollection > li { font-size: 125%; margin-top: 4%; }
+    
+    
+    /* LARGE */ @media screen and (max-width:1200px) {
+      .artcollection {
+        display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 0px;
+  	    padding: 0;
+  	    list-style: none;     word-wrap: normal;
+      }
+    }
+    
+    /* MEDIUM */ @media screen and (max-width:810px) {
+      .artcollection {
+        display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 0px;
+  	    padding: 0;
+  	    list-style: none;     word-wrap: normal;
+      }
+      .artcollection > li { font-size: 4vw; margin-top: 3%; }
+    }
+    
+    /* SMALL */ @media screen and (max-width:600px) {
+      .artcollection {
+        display: grid;      grid-template-columns: 1fr;     grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 0px; margin-top: 0px;
+  	    padding: 0;
+  	    list-style: none;     word-wrap: normal;
+      }
+      .artcollection > li { font-size: 7vw; margin-top: 4%; }
+    }
+    
+  /* - - - - - - - - - - - - - -  - - - - - - - - - - - - - - [08] CUSTOM MARKDOWN TOOLS - LIST OF VALUES FOR BLOG/ABOUT SHENANIGANS - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+  
+  .paragraphtitle {
+    font-size: 20px;
+    color: #bfdfde;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .paragraphimage {
+    width: 55%;
+  }
+  @media screen and (max-width:600px) {
+    .paragraphimage {
+      padding-right: 5px;
+      height: auto;
+      width: 97%;
+      margin: auto;
+      display: flex;
+    }
+  }
+  
+      /* MONITOR */
+      .monitor {
+        position: absolute;
+        width: 100vw;
+        height: 0px;
+        top: 0px;
+        margin: auto;
+        margin-top: -2px;
+        z-index: -1;
+      }
+      @media screen and (max-width:600px) {
+        .monitor { display: none; }
+      }
+      
+      .phone {
+        position: absolute;
+        width: 100vw;
+        height: 0px;
+        top: 0px;
+        margin: auto;
+        margin-top: -2px;
+        z-index: -1;
+      }
+      @media screen and (min-width:601px) {
+        .phone { display: none; }
+      }
+      
+      /* FILE MANAGER */
+      
+      /* EXPLORER - shell for the entire monitor */
+        .explorer-section {
+          background-color: #371f52; 
+          width: 68.9vw; height: 38.3vw;
+          border: purple 0px solid; border-radius: 0px;
+          margin: auto; margin-bottom: 10px;
+          padding: 0px; margin-top: 2.8vw;
+          display: flex; flex-direction: row; 
+        }
+          @media screen and (max-width:810px) {
+            .explorer-section { flex-direction: column; }
+          }
+          @media screen and (max-width:600px) {
+            .explorer-section { width: 80vw; height: 139.5vw; margin-top: 24.3vw;}
+          }
+        
+      /* MEGAWRAPPERS - shells for each side of the navigation */
+        .left-megawrapper {
+          width: 166px; display: flex; flex-direction: column;
+        }
+          @media screen and (max-width:810px) {
+            .left-megawrapper { flex-direction: row }
+          }
+          @media screen and (max-width:600px) {
+            .left-megawrapper { width: 80vw; height: 11.5vw;}
+          }
+          
+        .right-megawrapper  {
+          display: flex; flex-direction: column; flex: 1;  overflow-y: hidden;}
+          
+      /* EXPLORER NAVIGATION - shell for the reload, backwards, eject buttons */
+      .explorer-navigation {
+        display: flex; align-content: flex-start; 
+      }
+      .explorer-navigation > a { border-bottom: #493163 2px solid;}
+      @media screen and (max-width:600px) {
+        .explorer-navigation { width: 28.5%; height: 100%;}
+        .explorer-navigation > a { width: 50%;}
+      }
+      
+      /* CATEGORIES - shell for the categories! downloads, documents, etc */
+      .categories {
+        display: flex; flex-direction: column; 
+        text-align: start; align-items: start; justify-content: flex-start;
+      }
+        @media screen and (max-width:810px) {
+          .categories { flex-direction: row; }
+        }
+      
+      /* RAW LOCATION - fun title card for file location */
+      .raw-location {
+        display: flex; flex-shrink: 0;
+        height: 40px; 
+        text-align: start; align-items: center; justify-content: flex-start; 
+        border-left: #493163 2px solid; border-bottom: #493163 2px solid; padding-left: 8px;
+      }
+      @media screen and (max-width: 600px) { 
+        .raw-location { text-align: center; padding-left: 0px;}
+        .raw-location > a { width: 100%; text-align: center;}
+      }
+      
+      /* FILE NAVIGATION - shell for the files themselves */
+      .file-navigation {
+        display: flex; flex-direction: column; overflow-y: scroll;}
+        
+      /* FILE ENTRY - shell for each individual file's details */
+      .file-entry {
+        display: flex; flex-direction: row; 
+        background-color: #371f52;
+        padding-left: 5px;
+        border-left: #493163 2px solid;
+        text-align: start; align-items: center; justify-content: flex-start; }
+        
+      /* NAME/DATE - shell for a file's name and date */
+      .name-date-wrapper {
+        display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%;}
+        @media screen and (max-width:810px) {
+          .name-date-wrapper { flex-direction: column; }
+        }
+        @media screen and (max-width:600px) {
+          .name-date-wrapper { align-items: flex-start; }
+        }
+      
+      /* FILE PIECES - rules for each part of a file's information */
+      .file-icon { height: 20px; width: 20px; padding: 2px;}
+      .file-icon > img { width: 20px;}
+      .file-name { flex: 5.2; text-align: start; padding: 5px; border-right: #493163 2px solid;}
+      .file-date { flex: 1; text-align: start; padding-left: 7px; padding-right: 14px;}
+      @media screen and (max-width:600px) {
+        .file-icon { height: 40px; width: 40px; }
+        .file-icon > img { width: 40px; }
+        .file-name { border-right: #493163 0px solid;}
+      }
+      
+      /* CATEGORY PIECES - rules for each part of a category's information */
+      .category-shell { display: flex; flex-direction: row; height: 32px; width: 166px; align-items: center;}
+      .category-icon { height: 20px; width: 20px; padding-left: 5px;}
+      .category-name { height: 20px; text-align: start; padding-left: 3px;}
+      @media screen and (max-width:600px) {
+        .categories { width: 71.4%; height: 100%; justify-content: center;}
+        .categories > a {width: 20%; height: 100%;}
+        .category-shell { width: 100%; height: 95%; justify-content: center; border-bottom: #493163 2px solid; border-left: #493163 2px solid;}
+        .category-icon { height: 80%; width: 80%; padding-left: 0px;}
+        .category-icon > img { width: 100%; object-fit: contain;}
+        .category-name { display: none }
+      }
+      
+      /* EXPLORER PIECES - rules for each explorer button */
+      .explorer-shell {
+        display: flex;
+        padding: 5px; border-left: #493163 2px solid;}
+      .explorer-shell > img { width: 30px;}
+      @media screen and (max-width:600px) {
+        .explorer-shell {width: 100%; height: 100%; padding: 0px;}
+        .explorer-shell > img {width: 80%; height: 80%; padding: 0px;}
+      }
+      
+      .file { width: 20px; }
+      .clickable:hover { background-color: #493163 !important;}
+      .yes-phone {display: none}
+      @media screen and (max-width:600px) {
+        .no-phone { display: none }
+        .yes-phone {display: block}
+      }
+      
+      
+      /* MY ROOM */
+      
+      #movementshell { display: flex; justify-content: space-between; height: 1px; width: 100%; position: absolute; z-index: 5;}
+      #movementbar { display: flex; align-items: center; }
+      #movementbarvert { display: flex; align-items: center; opacity: 0.5; background-color: #000; width: 100vw; height: 7vw; }
+      .movestyle-room { opacity: 0.5; background-color: #000; }
+      .movestyle-space { opacity: 1; }
+      .movestyle-horiz { width: 7%; height: 100vh; }
+      .movestyle-vert { margin-left: 7vw; width: 86vw; height: 7vw; }
+      
+      #flexanchor-bottom { display: flex; position: relative; z-index: 1; height: 1px; justify-content: center;}
+      #flexanchor-bottom > a { margin: auto;}
+      
+      #browserforce { display: flex; z-index: -1; justify-content: center; align-items: center; align-content: center; margin: 0; position: absolute; top: 50%; transform: translateY(-50%);}
+      @media screen and (min-width:1919px) { #browserforce { width: 100vw; height: auto; } }
+      @media screen and (min-height:995px) { #browserforce { width: auto; height: 100vh; } }
+      @media screen and (max-width:810px) { #browserforce { height: 100vh; } }
+      
+
+      .hoverpop:hover {
+        -ms-transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+      }
+      
+      .hoverpop-bigger:hover {
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      
+      #button-logic {
+        display: none;
+        content: url(https://mentholgrrl.neocities.org/imageassets/my-room/blurb-cpap.png);
+      }
+
+      #button-logic:checked + label > img {
+       opacity: 50;
+      }
+      
+      #b-side {
+        display: flex; 
+        scale: 50%; 
+        margin: auto; 
+        z-index: 3; 
+        position: absolute; 
+        right: 10%;
+        opacity: 100;
+      }
+      
+            /* - - - - SPOTLIGHT - rules for promo on the frontpage - - - - */
+      
+      .spotlightdiv {
+        margin: auto; display: flex;
+        align-items: center; flex-direction: row; justify-content: space-evenly;
+        padding: 10px;
+      }
+      
+      .spotlightbutton {
+        margin: auto; 
+        border: #bfdfde 5px solid; border-radius: 100px;
+        scale: 15%;
+      }
+      
+      .spotlightbuttontray {
+        margin: auto; display: flex; 
+        align-items: center; 
+        margin-left: 20px; padding-bottom: 15px;
+        width: 35%;
+      }
+      
+      .spotlighttitles {
+        width: 100%; margin-top: 10px;
+      }
+      
+      .spotlightbottom {
+        width: 60%;
+      }
+      
+      .spotlightcover {
+        width: 36%; margin: 5px;
+      }
+      
+      /* LARGE */ @media screen and (max-width:1200px) {
+        .spotlightbottom {
+          width: 80%;
+        }
+        
+               
+        .spotlightcover {
+          width: 0%; margin: 0px;
+        }      
+      
+      /* MEDIUM */ @media only screen and (max-width:810px) {
+        .spotlightbottom {
+          flex-direction: column; justify-content: center;
+        }
+      }
+
+  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - END OF NAVIGATION - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
